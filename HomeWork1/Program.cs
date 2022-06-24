@@ -96,7 +96,7 @@ N = Convert.ToInt32(Console.ReadLine());
 
 a = 2;
 
-while (a < N)
+while (a <= N)
 {
     Console.Write( a + " ");
     a++; 
