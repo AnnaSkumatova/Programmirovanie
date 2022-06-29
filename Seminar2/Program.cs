@@ -69,7 +69,7 @@ void CutNumberVoid()
 {
     int num;
 
-    Console.Write("Input a first number: ");
+    Console.Write("Input a number: ");
     num = Convert.ToInt32(Console.ReadLine());
     
     if(num % 7 == 0)
