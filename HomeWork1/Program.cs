@@ -99,7 +99,7 @@ a = 2;
 while (a <= N)
 {
     Console.Write( a + " ");
-    a++; 
+    a = a + 2; 
 }
 
 
