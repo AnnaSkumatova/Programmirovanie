@@ -20,19 +20,27 @@ int SecondNum()
 
 
 /*Задача 2. Напишите программу, которая выводит третью цифру заданного числа или 
-сообщает, что третьей цифры нет.*/
+сообщает, что третьей цифры нет.
 
 void ThirdNumber(int num)
 {
 
 if (num > 99)
-    while(num <= 1000)
-    {    
-        int number = num / 100;
-        int result = number % 10;
+        {    
+        int number = num % 100;
+        
+        if();
+        {
+            Console.WriteLine("Третья цифра " + number);
+        }
+        else 
+            if(number < 1000)
+            {
+                int num1 = number % 10;
+                
+            }
+            
 
-        Console.WriteLine("Третья цифра " + result);
-    }
 else 
     Console.WriteLine("Третьей цифры нет");
 }
@@ -40,11 +48,47 @@ else
 Console.Write("Введите число: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 
-ThirdNumber(num1);
+ThirdNumber(num1);*/
 
 
 
 
+
+
+
+
+void ThirdNumber()
+{   
+    Console.Write("Введите число: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    
+    int num1 = number / 100;
+    int num2 = num1;
+
+
+    if (number < 100)
+    {
+        Console.WriteLine("Третьей цифры нет");
+    }
+
+    else 
+        if  (99 < num1 && num1 > 1000)
+        {
+        Console.WriteLine("Третья цифра " + num1);
+        }
+        else 
+            while(num1 < 999)
+            {
+            Console.WriteLine("Третья цифра " + num2);
+            num2 = num1 / 100;
+        
+
+
+            }
+    
+}
+
+ThirdNumber();
 
 
 
