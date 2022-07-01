@@ -58,7 +58,7 @@ int MaxNumber()
 }
 
 int res = MaxNumber;
-console.Write(res);
+Console.Write(res);
 
 
 
