@@ -21,18 +21,20 @@ int SecondNum()
 
 /*Задача 2. Напишите программу, которая выводит третью цифру заданного числа или 
 сообщает, что третьей цифры нет.*/
-
 int ThirdNumber()
 {
-    int num;
+int num;
+Console.Write("Введите число: ");
+num = Convert.ToInt32(Console.ReadLine());
 
-    Console.Write("Введите число: ");
-    num = Convert.ToInt32(Console.ReadLine());
-
-
-
-
+if (num > 99)
+    {
+        Console.WriteLine(num / 100);
+    }
 }
+
+
+
 
 
 
