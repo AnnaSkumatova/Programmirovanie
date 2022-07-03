@@ -29,70 +29,35 @@ void ThirdNumber()
     Console.Write("Введите число: ");
     int number = Convert.ToInt32(Console.ReadLine());
 
+    int num1 = number%10;
+    
+
     if (number < 100)
     {
         Console.WriteLine("Третьей цифры нет");
     }
     
-    if (99 < number && number > 1000)
+    if (99 < number && number < 1000)
     {
-        int num1 = number%10;
-
-        Console.WriteLine("Третья цифраaaa " + num1);
-       
+        Console.WriteLine("Третья цифра " + num1);       
     }
+    
     if (number > 999)
-    {
-        while(number < 1000)
+    {   
+        int num2 = 0;
+        num2 = number/10;
+        
+        while(99 < num2 && num2 < 1000)
         {
-            int num2 = number/10;
+            num2 = number/10;
         };
 
         int result = num2 % 10;
         Console.WriteLine("Третья цифра " + result);
-            
     } 
-
-
 }
 ThirdNumber();
 
-
-
-/*
-
-void ThirdNumber()
-{   
-    Console.Write("Введите число: ");
-    int number = Convert.ToInt32(Console.ReadLine());
-    
-    int num1 = number / 100;
-    int num2 = num1;
-
-
-    if (number < 100)
-    {
-        Console.WriteLine("Третьей цифры нет");
-    }
-
-    else 
-        if  (99 < num1 && num1 > 1000)
-        {
-        Console.WriteLine("Третья цифра " + num1);
-        }
-        else 
-            while(num1 < 999)
-            {
-            Console.WriteLine("Третья цифра " + num2);
-            num2 = num1 / 100;
-        
-
-
-            }
-    
-}
-
-ThirdNumber();*/
 
 
 
