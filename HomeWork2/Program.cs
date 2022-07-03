@@ -24,11 +24,10 @@ int SecondNum()
 
 
 void ThirdNumber()
+
 {
     Console.Write("Введите число: ");
     int number = Convert.ToInt32(Console.ReadLine());
-
-
 
     if (number < 100)
     {
@@ -38,19 +37,18 @@ void ThirdNumber()
     if (99 < number && number > 1000)
     {
         int num1 = number%10;
-        Console.WriteLine("Третья цифра " + num1);
+
+        Console.WriteLine("Третья цифраaaa " + num1);
+       
     }
-    
     if (number > 999)
     {
-        int num2 = 0;
-
-        while(num2 < 1000)
+        while(number < 1000)
         {
-            num2 = number/100;
+            int num2 = number/10;
         };
 
-        int result = number % 10;
+        int result = num2 % 10;
         Console.WriteLine("Третья цифра " + result);
             
     }
