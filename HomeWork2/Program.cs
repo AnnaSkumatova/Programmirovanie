@@ -51,7 +51,7 @@ void ThirdNumber()
         int result = num2 % 10;
         Console.WriteLine("Третья цифра " + result);
             
-    }
+    } 
 
 
 }
