@@ -49,7 +49,7 @@ void ThirdNumber()
         
         while(num2 <= 1000)
         {
-            int num3 = num2/10;
+            num2 = num2/10;
         };
 
         int result = num2 % 10;
