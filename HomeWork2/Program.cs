@@ -47,7 +47,7 @@ void ThirdNumber()
         int num2 = 0;
         num2 = number/10;
         
-        while(num2 <= 1000)
+        while(num2 > 999)
         {
             num2 = num2/10;
         };
