@@ -48,17 +48,13 @@ int MaxNumber()
     int secondnum = num / 10;
 
     if (firstnum > secondnum)
-    {
         return firstnum;
-    }
     else
-    {
         return secondnum;
-    }
        
 }
 
-int res = MaxNumber;
+int res = MaxNumber();
 Console.Write(res);
 
 
