@@ -67,7 +67,9 @@ int SummaElementov (int[] array)
     int sum = 0;
 
     for(int i = 0; i < array.Length; i++)
-        if(array[i] % 2 == 1) sum = sum + array[i];
+    {
+        if(array[i] % 2 == 1) sum += array[i];
+    }
     return sum;
 }
 
@@ -79,8 +81,8 @@ Console.Write("Input max possible value of elements: ");
 int max = Convert.ToInt32(Console.ReadLine());
 
 int[] array = CreateRandomArray(size, min, max);
-
 ShowArray(array);
+
 int result = SummaElementov(array);
 Console.WriteLine("Summa elementov: " + result);
 
@@ -89,10 +91,10 @@ Console.WriteLine("Summa elementov: " + result);
 
 
 
-//Задача 3. Задайте массив вещественных чисел. Найдите разницу между 
+/* //Задача 3. Задайте массив вещественных чисел. Найдите разницу между 
 //максимальным и минимальным элементом массива.
 
-double[] CreateRandomArray(int size, int minValue, int maxValue)
+ double[] CreateRandomArray(int size, int minValue, int maxValue)
 {
     double[] newArray = new double[size]; 
 
@@ -112,12 +114,11 @@ void ShowArray(double[] array)
 
 int DifferenceMaxMin (double[] array)
 {
-    int min = 0;
-    int max = 0;
+    double min = 0;
+    double max = 0;
 
     for(int i = 0; i < array.Length; i++)
-        if(array[i] >) sum = sum + array[i];
-    return sum;
+
 }
 
 Console.Write("Input size of array: ");
@@ -129,6 +130,7 @@ int max = Convert.ToInt32(Console.ReadLine());
 
 int[] array = CreateRandomArray(size, min, max);
 
-ShowArray(array);
-int result = SummaElementov(array);
-Console.WriteLine("Summa elementov: " + result);
+ShowArray(array);*/
+
+
+
