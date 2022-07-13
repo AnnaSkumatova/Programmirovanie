@@ -90,16 +90,17 @@ Console.WriteLine("Summa elementov: " + result);
 
 
 
-
-/* //Задача 3. Задайте массив вещественных чисел. Найдите разницу между 
-//максимальным и минимальным элементом массива.
-
- double[] CreateRandomArray(int size, int minValue, int maxValue)
+ /*Задача 3. Задайте массив вещественных чисел. Найдите разницу между 
+//максимальным и минимальным элементами массива.*/
+/*
+ double[] CreateRandomArray(int size)
 {
     double[] newArray = new double[size]; 
 
     for(int i = 0; i < size; i++)
-        newArray[i] = new Random().Next(minValue, maxValue + 1);
+    {   
+        newArray[i] =new Random().Next(1, 100) + new Random().NextDouble();
+    }
 
     return newArray;
 }
@@ -112,25 +113,36 @@ void ShowArray(double[] array)
     Console.WriteLine();
 }
 
-int DifferenceMaxMin (double[] array)
+double min(double[] array)
 {
-    double min = 0;
-    double max = 0;
+    double min = array[0];
+    for(int i = 1; i < array.Length; i++)
+        if (array[i] < min) min = array[i];
+    return min;
+}
 
-    for(int i = 0; i < array.Length; i++)
 
+double max(double[]array)
+{
+    double max = array[0];
+    for(int i = 1; i < array.Length; i++)
+       if (array[i] > max) max = array [i];
+    return max;
 }
 
 Console.Write("Input size of array: ");
 int size = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input min possible value of elements: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input max possible value of elements: ");
-int max = Convert.ToInt32(Console.ReadLine());
 
-int[] array = CreateRandomArray(size, min, max);
+double[] array = CreateRandomArray(size);
 
-ShowArray(array);*/
+ShowArray(array);
+
+double Difference = max(array) - min(array); 
+Console.WriteLine("Difference MaxMin: " + Difference);*/
+
+
+
+
 
 
 
