@@ -68,7 +68,7 @@ int SummaElementov (int[] array)
 
     for(int i = 0; i < array.Length; i++)
     {
-        if(array[i] % 2 == 1) sum += array[i];
+        if(i % 2 == 1) sum += array[i];
     }
     return sum;
 }
