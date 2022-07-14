@@ -54,17 +54,27 @@ y = 5 * x + 2
 y = 3 * x + 4
 
 x = 3    1   2
+
 y = 17   7   12
 
-y = 13   7   10 
+y = 13   7   10 */
 
-int x;
-int y;
-int b1;
-int b2;
-int k1;
-int k2;
 
-x = (b2 - b1)/(k1 - k2);*/
+Console.Write("Input 1: ");
+int b1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input 2: ");
+int b2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input 3: ");
+int k1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input 4: ");
+int k2 = Convert.ToInt32(Console.ReadLine());
 
+double x;
+double y;
+
+x = (b2 - b1)/(k1 - k2);
+Console.WriteLine("Res x: " + x);
+
+y = k1 * ((b2-b1)/(k1-k2))+b1;
+Console.WriteLine("Res y: " + y);
 
