@@ -41,7 +41,7 @@ Show2DArray(myArray); */
 
 
 /*Задача. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает 
-значение этого элемента или же указание, что такого элемента нет.*/
+значение этого элемента или же указание, что такого элемента нет.
 
 int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue) 
 {
@@ -73,12 +73,11 @@ int MeaningElementArray(int[,] array)
     int b = Convert.ToInt32(Console.ReadLine()); 
     
     
-    if(a < i && b < j)
+    if(a < array.GetLength(0) && b < array.GetLength(1))
     {
-        for(i = 0; i < array.GetLength(0); i++)
-            for(j= 0; j < array.GetLength(1); j++)
-
-        return array[i,j];
+        for(int i = 0; i < array.GetLength(0); i++)
+            for(int j = 0; j < array.GetLength(1); j++)
+            return array[i,j];
     }
 
     else
@@ -99,11 +98,7 @@ int max = Convert.ToInt32(Console.ReadLine());
 int[,] myArray = CreateRandom2DArray(m, n, min, max);
 Show2DArray(myArray);
 
-Console.WriteLine("Array element value: " + MeaningElementArray(myArray[i,j]));
-
-
-
-
+Console.WriteLine("Array element value: " + MeaningElementArray(myArray));*/
 
 
 
@@ -127,7 +122,7 @@ Console.WriteLine("Array element value: " + MeaningElementArray(myArray[i,j]));
 
 
 /*Задача. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-
+*/
 int[,] CreateRandom2DArray(int rows, int columns) 
 {
     int[,] newArray = new int[rows, columns];
@@ -149,21 +144,20 @@ void Show2DArray(int[,] array)
         Console.WriteLine();
     }
 }
-int FindAverage (int[,] array)
+double FindAverage (int[,] array)
 {
-    int average = 0;
+    double average = 0;
 
-    for(int i = 0; i < array.GetLength(1); i++)
-    {   
-        int summ = 0;
-        for(int j = 0; j < array.GetLength(0); j++)
+    for(int i = 0; i < array.GetLength(0); i++)
+        for(int j = 0; j < array.GetLength(1); j++)
         {
+            int summ = 0;
+            
             summ += array[j,i];
+            average = summ/array.GetLength(0);
+            
         }
-        average = summ/(array.GetLength(0));
-
-    }
-   return average; 
+    return average;    
 }
 
 
@@ -175,4 +169,4 @@ int n = Convert.ToInt32(Console.ReadLine());
 int[,] myArray = CreateRandom2DArray(m, n);
 Show2DArray(myArray);
 
-Console.WriteLine("Average: " + FindAverage(myArray));*/
+Console.WriteLine("Average: " + FindAverage(myArray));
