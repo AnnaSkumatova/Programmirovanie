@@ -41,7 +41,7 @@ Show2DArray(myArray); */
 
 
 /*Задача. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает 
-значение этого элемента или же указание, что такого элемента нет.*/
+значение этого элемента или же указание, что такого элемента нет.
 
 int[,] CreateRandom2DArray(int rows, int columns) 
 {
@@ -90,6 +90,7 @@ int n = Convert.ToInt32(Console.ReadLine());
 int[,] myArray = CreateRandom2DArray(m, n);
 Show2DArray(myArray);
 MeaningElementArray(myArray);
+*/
 
 
 
@@ -97,8 +98,7 @@ MeaningElementArray(myArray);
 
 
 
-
-/*Задача. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+/*Задача. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.*/
 
 int[,] CreateRandom2DArray(int rows, int columns) 
 {
@@ -143,5 +143,5 @@ for (int i = 0; i < n; i++)
         Console.WriteLine("Average for " + a +" column is " + average);    
     } 
 
-*/
+
   
