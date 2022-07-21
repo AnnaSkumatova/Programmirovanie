@@ -100,3 +100,16 @@ int max = Convert.ToInt32(Console.ReadLine());
 int[,] myArray = CreateRandom2DArray(m, n, min, max);
 
 Show2DArray(myArray);
+
+
+
+
+
+Задача. Заполните спирально массив 4 на 4.
+
+Например, на выходе получается вот такой массив:
+
+1 2 3 4
+12 13 14 5
+11 16 15 6
+10 9 8 7
