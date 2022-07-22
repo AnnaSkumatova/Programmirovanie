@@ -95,27 +95,74 @@ void Show2DArray(int[,] array)
 }
 
 
-int SumLineElements(int[,] array, int i)
+Console.Write("Input number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of columns: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+
+int[,] myArray = CreateRandom2DArray(m, n);
+
+Show2DArray(myArray);
+
+int SummaString (int[,] array)
 {
-    int minSum = 0;
+    int sum = 0;
+
+    for (int i = 0; i < array.GetLength(1); i++)
+        for (int j = 0; j < array.GetLength(0); j++)
+            sum = sum + array[i,j];
+    return sum;
+}
+
+int minsum = 0;
+int sumstring = SummaString(myArray, 0);
+for(int i = 1; i < myArray.GetLength(0); i++)
+        {
+            int temp = SummaString(myArray, i);
+            int min = i;
+            
+            if(sumstring > temp)
+            {            
+                sumstring = temp;
+                minsum = i;
+            }
+
+        }
+int minSumLine = 0;
 int sumLine = SumLineElements(array, 0);
 for (int i = 1; i < array.GetLength(0); i++)
 {
-  int tempSumLine = SumLineElements(array, i);
-  if (sumLine > tempSumLine)
-  {
-    sumLine = tempSumLine;
-    minSum = i;
-  }
-
-Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей суммой ({sumLine}) элементов ");
+int tempSumLine = SumLineElements(array, i);
+if (sumLine > tempSumLine)
+{
+sumLine = tempSumLine;
+minSumLine = i;
 }
-  int sumLine = array[i,0];
-  for (int j = 1; j < array.GetLength(1); j++)
-  {
-    sumLine += array[i,j];
-  }
-  return sumLine;
+}
+Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей суммой ({sumLine}) элементов ");
+int SumLineElements(int[,] array, int i)
+{
+int sumLine = array[i,0];
+for (int j = 1; j < array.GetLength(1); j++)
+{
+sumLine += array[i,j];
+}
+return sumLine;
+//     int minSumma = ;
+//     int sumLine = SumLineElements(array, 0);
+//     for (i = 1; i < array.GetLength(0); i++)
+//     {
+  
+//   if (sumLine > int tempSumLine)
+//     {
+//         tempSumLine = SumLineElements(array, i);
+//         sumLine = tempSumLine;
+//         minSum = i;
+//     }
+
+    Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей суммой ({sumLine}) элементов ");
+    }
 }
 
 // for (int i = 0; i < n; i++)
@@ -130,15 +177,7 @@ Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей су�
 //         Console.WriteLine("Average for " + a +" column is " + average);    
 //     } 
 
-Console.Write("Input number of rows: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input number of columns: ");
-int n = Convert.ToInt32(Console.ReadLine());
 
-
-int[,] myArray = CreateRandom2DArray(m, n);
-
-Show2DArray(myArray);
 
 
 
