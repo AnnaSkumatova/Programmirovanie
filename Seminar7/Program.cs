@@ -1,4 +1,4 @@
-//Задача. Задайте двумерный массив размером m × n, заполненный случайными целыми числами.
+﻿//Задача. Задайте двумерный массив размером m × n, заполненный случайными целыми числами.
 /*
 int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue) //rows - строка, columns - столбец
 {
@@ -11,6 +11,13 @@ int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue) //
     return newArray;
 } 
 
+void Show2DArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j] + " ");
+        
         Console.WriteLine();
     }
 }
