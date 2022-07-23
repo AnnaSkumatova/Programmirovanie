@@ -71,7 +71,7 @@ Show2DArray(Sortirovka(myArray));
 5 2 6 7
 
 Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 
-1 строка*/
+1 строка
 
 int[,] CreateRandom2DArray(int rows, int columns) 
 {
@@ -94,27 +94,29 @@ void Show2DArray(int[,] array)
     }
 }
 
-
 int StringMinSumma (int[,] array)
 {
-    int sum = 0;
+    int min = 0;
     int index = 0;
     
     for (int i = 0; i < array.GetLength(0); i++)
         {
-            int temp = 0;
+            int sum = 0;
             for (int j = 0; j < array.GetLength(1); j++)
                 {
                 sum += array[i, j];
                 }
-                if (sum > temp)
-                    {
-                        sum = temp;
-                        index = i;
-                    }
+            if (i == 0) min = sum; 
+//Павел, признаюсь честно, "слизала" это условие с семинара, "билась" над задачей три дня, решила перевести фокус
+на семинар, и тут решение моей проблемы.
+            
+            if (sum < min)
+                {
+                    min = sum;
+                    index = i;
+                }
         }
     return index;
-
 }
 
 Console.Write("Input number of rows: ");
@@ -122,119 +124,13 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input number of columns: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-
 int[,] myArray = CreateRandom2DArray(m, n);
 
 Show2DArray(myArray);
 
-Console.WriteLine("String with minimum summa: " + StringMinSumma(myArray));
-// int SummaString (int[,] array)
-// {
-//     int sum = 0;
-
-//     for (int i = 0; i < n; i++)
-//         for (int j = 0; j < m; j++)
-//             sum = sum + array[i,j];
-//     return sum;
-// }
-
-// int minsum = 0;
-// int sumstring = SummaString(myArray);
-// for(int i = 1; i < myArray.GetLength(0); i++)
-//         {
-//             int temp = SummaString(myArray);
-//             int min = i;
-            
-//             if(sumstring > temp)
-//             {            
-//                 sumstring = temp;
-//                 minsum = i;
-//             }
-
-//         }
-// Console.WriteLine( minsum + 1 + "- строкa с наименьшей суммой.");
-// int minSumLine = 0;
-// int sumLine = SumLineElements(array, 0);
-// for (int i = 1; i < array.GetLength(0); i++)
-// {
-// int tempSumLine = SumLineElements(array, i);
-// if (sumLine > tempSumLine)
-// {
-// sumLine = tempSumLine;
-// minSumLine = i;
-// }
-// }
-// Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей суммой ({sumLine}) элементов ");
-// int SumLineElements(int[,] array, int i)
-// {
-// int sumLine = array[i,0];
-// for (int j = 1; j < array.GetLength(1); j++)
-// {
-// sumLine += array[i,j];
-// }
-// return sumLine;
-//     int minSumma = ;
-//     int sumLine = SumLineElements(array, 0);
-//     for (i = 1; i < array.GetLength(0); i++)
-//     {
-  
-//   if (sumLine > int tempSumLine)
-//     {
-//         tempSumLine = SumLineElements(array, i);
-//         sumLine = tempSumLine;
-//         minSum = i;
-//     }
-
-
-
-// for (int i = 0; i < n; i++)
-//     {
-//         double summ = 0;
-//         for (int j = 0; j < m; j++)
-//             {
-//                 summ = summ + myArray[j,i];
-//             }
-//             double average = summ / m;
-//             int a = i + 1;
-//         Console.WriteLine("Average for " + a +" column is " + average);    
-//     } 
-
-
-
-
-
-// for (int i = 0; i < n; i++)
-//     {
-//         int sum = 0;
-//         for (int j = 0; j < m; j++)
-//                 sum = sum + myArray[i, j];        
-            
-//             if (sum < minsum)
-//                 {
-//                     minsum = sum;
-//                     indexLine++;
-//                 }
-        
-//     }
-// Console.WriteLine("Cтрока с наименьшей суммой элементов: " + (indexLine));
-
-// int minsum = 0;
-// int indexLine = 0;
-
-// for (int i = 0; i < n; i++)
-//     {
-//         int summ = 0;
-//         for (int j = 0; j < m; j++)
-//             {
-//                 summ = summ + myArray[i,j];
-//             }
-//             if (summ < minsum)
-//                 minsum = summ;
-//                 int a = i + 1;
-            
-            
-//     Console.WriteLine("Cтрока с наименьшей суммой элементов: " + indexLine);
-//     }   
+int rezult = StringMinSumma(myArray) + 1;
+Console.WriteLine("String with minimum summa: " + rezult);
+*/
 
 
 
@@ -247,3 +143,52 @@ Console.WriteLine("String with minimum summa: " + StringMinSumma(myArray));
 12 13 14 5
 11 16 15 6
 10 9 8 7*/
+
+int[,] Create2DArray(int rows, int columns) 
+{
+    
+    int[,] newArray = new int[rows, columns];
+    
+    return newArray;
+} 
+
+int[,] Spiral (int[,] array)
+{
+    int temp = 1;
+    int i = 0;
+    int j = 0;
+
+    while (temp <= array.GetLength(0) * array.GetLength(1))
+    {
+        array[i, j] = temp;
+
+        if (i <= j + 1 && i + j < array.GetLength(1) - 1)
+            j++;
+        else if (i < j && i + j >= array.GetLength(0) - 1)
+                i++;
+        else if (i >= j && i + j > array.GetLength(1) - 1)
+                j--;
+        else i--;
+        
+        temp++;
+    }
+    return array;
+}
+
+void Show2DArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i, j] + " ");
+        
+        Console.WriteLine();
+    }   
+}
+
+int m = 4;
+int n = 4;
+
+int[,] myArray = Create2DArray(m, n);
+myArray = Spiral(myArray);
+Show2DArray(myArray);
