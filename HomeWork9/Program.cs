@@ -4,7 +4,7 @@ N = 4532 -> 4*/
 Console.Write("Input number: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-int CountOfDigits(int n)
+int CountOfDigits(int n) 
 {
     if(n < 10)
         return 1;
